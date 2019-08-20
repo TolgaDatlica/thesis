@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field>
+					<mat-select placeholder="Veri Gönderme Sıklığı (dk)" [(ngModel)]="minInterval">
+						<mat-option *ngFor="let time of timeIntervalArray" [value]="time">
+							{{ time }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Epsilon 1 Değeri (metre)" [(ngModel)]="epsilon">
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+			<div class="kt-section">
+				<div class="example-container">
+					<mat-form-field class="example-full-width">
+						<input matInput placeholder="Epsilon 2 Değeri (dakika)" [(ngModel)]="epsilon2">
+					</mat-form-field>
+				</div>
+			</div>
+		</div>
+	<div class="col-md-3">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="minPoints Değeri" [(ngModel)]="minPoints">
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="kt-section">
+			<div class="example-container">
+					<div class="button-row">
+						<button mat-raised-button color="primary" (click)="run()">Çalıştır</button>
+					</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div id='mapwrapper'>
+	<div class="map" id="map2" style="display: block; height: 100%;">Harita Yükleniyor...
+	</div>
+</div>

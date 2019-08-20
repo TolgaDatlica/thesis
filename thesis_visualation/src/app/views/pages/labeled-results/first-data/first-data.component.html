@@ -1,0 +1,104 @@
+<!-- <div class="row">
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field>
+					<mat-select placeholder="Veri Seti" [(ngModel)]="selecteddatasets" multiple>
+						<mat-option *ngFor="let dataset of datasets" [value]="dataset.value">{{dataset.name}}</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field>
+					<mat-select placeholder="Veri Gönderme Sıklığı (dk)" [(ngModel)]="minInterval">
+						<mat-option *ngFor="let time of timeIntervalArray" [value]="time">
+							{{ time }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Epsilon 1 Değeri (metre)" [(ngModel)]="epsilon">
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Epsilon 2 Değeri (dakika)" [(ngModel)]="epsilon2">
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="minPoints Değeri" [(ngModel)]="minPoints">
+				</mat-form-field>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="kt-section">
+			<div class="example-container">
+				<div class="button-row">
+					<button mat-raised-button color="primary" (click)="run()">Çalıştır</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div> -->
+<div class="row">
+	<div class="col-md-12">
+		<div class="kt-section__content">
+
+			<div class="example-container mat-elevation-z8">
+				<mat-table [dataSource]="dataSource" matSort>
+					<!-- ID Column -->
+					<ng-container matColumnDef="VeriPaketiSayisi">
+						<mat-header-cell *matHeaderCellDef mat-sort-header> Veri Paketi Sayısı </mat-header-cell>
+						<mat-cell *matCellDef="let row"> {{row.VeriPaketiSayisi}} </mat-cell>
+					</ng-container>
+					<!-- Progress Column -->
+					<ng-container matColumnDef="VeriGondermeSikligi">
+						<mat-header-cell *matHeaderCellDef mat-sort-header> Veri Gönderme Sıklığı </mat-header-cell>
+						<mat-cell *matCellDef="let row"> {{row.VeriGondermeSikligi}} </mat-cell>
+					</ng-container>
+					<!-- Name Column -->
+					<ng-container matColumnDef="Epsilon1">
+						<mat-header-cell *matHeaderCellDef mat-sort-header> Epsilon 1 </mat-header-cell>
+						<mat-cell *matCellDef="let row"> {{row.Epsilon1}} </mat-cell>
+					</ng-container>
+					<!-- Name Column -->
+					<ng-container matColumnDef="Epsilon2">
+						<mat-header-cell *matHeaderCellDef mat-sort-header> Epsilon 2 </mat-header-cell>
+						<mat-cell *matCellDef="let row"> {{row.Epsilon2}} </mat-cell>
+					</ng-container>
+					<!-- Color Column -->
+					<ng-container matColumnDef="MinPoints">
+						<mat-header-cell *matHeaderCellDef mat-sort-header> Min Points </mat-header-cell>
+						<mat-cell *matCellDef="let row" [style.color]="row.MinPoints"> {{row.MinPoints}} </mat-cell>
+					</ng-container>
+					<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+					<mat-row *matRowDef="let row; columns: displayedColumns;">
+					</mat-row>
+				</mat-table>
+				<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+			</div>
+
+		</div>
+	</div>
+</div>
