@@ -11,7 +11,7 @@ import * as moment from 'moment';
 })
 export class FirstDataComponent implements OnInit, AfterViewInit {
 	// datatable bilgileri
-	displayedColumns = ['VeriPaketiSayisi', 'VeriGondermeSikligi', 'Epsilon1', 'Epsilon2', 'MinPoints'];
+	displayedColumns = ['HaftaSayisi','VeriPaketiSayisi', 'VeriGondermeSikligi', 'Epsilon1', 'Epsilon2', 'MinPoints'];
 	dataSource: MatTableDataSource<LabeledResultData>;
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 	@ViewChild(MatSort, { static: true }) sort: MatSort;

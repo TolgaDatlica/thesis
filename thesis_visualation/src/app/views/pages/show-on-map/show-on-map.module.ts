@@ -54,6 +54,11 @@ import {
 import { ShowOnMapComponent } from './show-on-map.component';
 import { ShowOnMap7MinComponent } from './show-on-map-7min/show-on-map-7min.component';
 import { ShowOnMap7MinService } from './show-on-map-7min/show-on-map-7min.service';
+import { ShowOnMap3MinComponent } from './show-on-map-3min/show-on-map-3min.component';
+import { ShowOnMap3MinService } from './show-on-map-3min/show-on-map-3min.service';
+import { ShowOnMap5MinComponent } from './show-on-map-5min/show-on-map-5min.component';
+import { ShowOnMap5MinService } from './show-on-map-5min/show-on-map-5min.service';
+
 import { ShowOnMapCustomMinComponent } from './show-on-map-custommin/show-on-map-custommin.component';
 import { ShowOnMapCustomMinService } from './show-on-map-custommin/show-on-map-custommin.service';
 import { ShowOnMapStdbsanComponent } from './show-on-map-stdbscan/show-on-map-stdbscan.component';
@@ -111,6 +116,14 @@ import { STDbscanService } from './show-on-map-stdbscan/stdbscan-algo.service';
 				component: ShowOnMap7MinComponent
 			},
 			{
+				path: '3',
+				component: ShowOnMap3MinComponent
+			},
+			{
+				path: '5',
+				component: ShowOnMap5MinComponent
+			},
+			{
 				path: '7',
 				component: ShowOnMap7MinComponent
 			},
@@ -124,10 +137,12 @@ import { STDbscanService } from './show-on-map-stdbscan/stdbscan-algo.service';
 			},
 		]),
 	],
-	providers: [ShowOnMap7MinService, ShowOnMapCustomMinService, ShowOnMapStdbscanService, STDbscanService],
+	providers: [ShowOnMap7MinService, ShowOnMap5MinService, ShowOnMap3MinService, ShowOnMapCustomMinService, ShowOnMapStdbscanService, STDbscanService],
 	declarations: [
 		ShowOnMapComponent,
 		ShowOnMap7MinComponent,
+		ShowOnMap5MinComponent,
+		ShowOnMap3MinComponent,
 		ShowOnMapCustomMinComponent,
 		ShowOnMapStdbsanComponent,
 	]

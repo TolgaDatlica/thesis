@@ -67,6 +67,10 @@
 
 			<div class="example-container mat-elevation-z8">
 				<mat-table [dataSource]="dataSource" matSort>
+						<ng-container matColumnDef="HaftaSayisi">
+								<mat-header-cell *matHeaderCellDef mat-sort-header> Hafta Sayısı </mat-header-cell>
+								<mat-cell *matCellDef="let row"> {{row.HaftaSayisi}} </mat-cell>
+							</ng-container>
 					<!-- ID Column -->
 					<ng-container matColumnDef="VeriPaketiSayisi">
 						<mat-header-cell *matHeaderCellDef mat-sort-header> Veri Paketi Sayısı </mat-header-cell>
