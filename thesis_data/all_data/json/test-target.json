@@ -1,0 +1,18 @@
+[
+{Epsilon1: 1500, Epsilon2: 45, MinPoints:11 }
+{Epsilon1: 800, Epsilon2: 140, MinPoints:4 },
+{Epsilon1: 1000, Epsilon2: 70, MinPoints:6 },
+{Epsilon1: 1000, Epsilon2: 35, MinPoints:8 },
+{Epsilon1: 1200, Epsilon2: 40, MinPoints:7 },
+{Epsilon1: 1400, Epsilon2: 45, MinPoints:6 },
+{Epsilon1: 1000, Epsilon2: 90, MinPoints:4 },
+{Epsilon1: 1600, Epsilon2: 45, MinPoints:7 },
+{Epsilon1: 2000, Epsilon2: 60, MinPoints:7 },
+{Epsilon1: 800, Epsilon2: 140, MinPoints:5 },
+{Epsilon1: 800, Epsilon2: 20, MinPoints:8 },
+{Epsilon1: 2000, Epsilon2: 60, MinPoints:7 },
+{Epsilon1: 2000, Epsilon2: 60, MinPoints:7 },
+{Epsilon1: 800, Epsilon2: 20, MinPoints:8 },
+{Epsilon1: 800, Epsilon2: 140, MinPoints:5 },
+{Epsilon1: 800, Epsilon2: 20, MinPoints:8 }
+]
