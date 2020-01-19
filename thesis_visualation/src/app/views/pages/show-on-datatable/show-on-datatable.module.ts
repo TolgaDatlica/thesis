@@ -63,6 +63,7 @@ import { ShowOnDataTableClustersService } from './show-on-datatable-clusters/sho
 
 import { ShowOnDataTableClusterSummaryWeekBaseComponent } from './show-on-datatable-clustersummaryweekbase/show-on-datatable-clustersummaryweekbase.component';
 import { ShowOnDataTableClusterSummaryWeekBaseService } from './show-on-datatable-clustersummaryweekbase/show-on-datatable-clustersummaryweekbase.service';
+import { ExcelService } from '../../../services/excel.service';
 @NgModule({
 	imports: [
 		CommonModule,
@@ -133,7 +134,8 @@ import { ShowOnDataTableClusterSummaryWeekBaseService } from './show-on-datatabl
 			
 		]),
 	],
-	providers: [ShowOnDataTableStdbscanService, STDbscanService, ShowOnDataTableClusterSummaryService, ShowOnDataTableClustersService, ShowOnDataTableClusterSummaryWeekBaseService],
+	providers: [ShowOnDataTableStdbscanService, STDbscanService, ShowOnDataTableClusterSummaryService, ShowOnDataTableClustersService, ShowOnDataTableClusterSummaryWeekBaseService,
+	ExcelService],
 	declarations: [
 		ShowOnDataTableComponent,
 		ShowOnDataTableStdbsanComponent,

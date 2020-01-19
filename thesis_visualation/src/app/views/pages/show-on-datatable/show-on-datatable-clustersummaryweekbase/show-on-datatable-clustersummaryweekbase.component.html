@@ -57,6 +57,7 @@
 			<div class="example-container">
 				<div class="button-row">
 					<button mat-raised-button color="primary" (click)="run()">Çalıştır</button>
+					<button mat-raised-button color="success" (click)="download()">Çalıştır</button>
 				</div>
 			</div>
 		</div>
@@ -75,8 +76,8 @@
 	<div class="col-md-12">
 		<div class="kt-section__content">
 
-			<div class="example-container mat-elevation-z8">
-				<mat-table [dataSource]="dataSource" matSort>
+			<div class="example-container mat-elevation-z8" #gridExport>
+				<table mat-table [dataSource]="dataSource" matSort >
 					<!-- ID Column -->
 					<ng-container matColumnDef="Enlem">
 						<mat-header-cell *matHeaderCellDef mat-sort-header> Enlem </mat-header-cell>
@@ -107,10 +108,10 @@
 						<mat-header-cell *matHeaderCellDef mat-sort-header> Cluster </mat-header-cell>
 						<mat-cell *matCellDef="let row" [style.color]="row.Adres"> {{row.Adres}} </mat-cell>
 					</ng-container>
-					<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-					<mat-row *matRowDef="let row; columns: displayedColumns;">
-					</mat-row>
-				</mat-table>
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns;">
+					</tr>
+				</table>
 				<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 			</div>
 

@@ -5,12 +5,15 @@ import { ShowOnDataTableClusterSummaryWeekBaseService } from './show-on-datatabl
 import { STDbscanService } from '../../show-on-map/show-on-map-stdbscan/stdbscan-algo.service';
 import { ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
+import { ExcelService } from '../../../../services/excel.service';
 @Component({
 	selector: 'showondatatableclustersummaryweekbase',
 	templateUrl: './show-on-datatable-clustersummaryweekbase.component.html',
 	styleUrls: ['show-on-datatable-clustersummaryweekbase.component.scss'],
 })
 export class ShowOnDataTableClusterSummaryWeekBaseComponent implements OnInit, AfterViewInit {
+	// excel export
+	@ViewChild('gridExport', { static: true }) gridExport;
 	// datatable bilgileri
 	displayedColumns = ['Enlem', 'Boylam', 'MinZaman', 'MaxZaman', 'cluster', 'Adres'];
 	dataSource: MatTableDataSource<ClusterData>;
@@ -32,7 +35,7 @@ export class ShowOnDataTableClusterSummaryWeekBaseComponent implements OnInit, A
 	currentSpatialData = [];
 	resultClusters = [];
 	constructor(private renderer: Renderer2, private elementRef: ElementRef, private _service: ShowOnDataTableClusterSummaryWeekBaseService, private activatedRoute: ActivatedRoute,
-		private stbscanService: STDbscanService) {
+		private stbscanService: STDbscanService, private excelService: ExcelService) {
 		this.activatedRoute.queryParams.subscribe(params => {
 			let minInterval = params['min'] ? params['min'] : 3;
 			this.minInterval = minInterval;
@@ -172,6 +175,12 @@ export class ShowOnDataTableClusterSummaryWeekBaseComponent implements OnInit, A
 		var date = new Date(min * 60 * 1000)
 		var userTimezoneOffset = date.getTimezoneOffset() * 60000 * -1;
 		return new Date(date.getTime() - userTimezoneOffset);
+	}
+	async download() {
+		setTimeout(() => {
+			debugger;
+			this.excelService.ExportTOExcel(this.gridExport, 'summarycluster');
+		}, 500);
 	}
 }
 export interface ClusterData {
